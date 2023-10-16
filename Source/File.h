@@ -4,6 +4,8 @@
 
 class File {
 public:
+  char *
+      *file_lines_pointers_; // Указатель на строки файла в динамеичекой памяти
   File(std::string file_name);
 
   int GetFileSize();
@@ -20,7 +22,5 @@ private:
 
   int file_size_;  // Размер файла
   int file_lines_; // Количество строк в файле
-  char *
-      *file_lines_pointers_; // Указатель на строки файла в динамеичекой памяти
   char *file_symbols_pointers_; // Указатель на файл в динамеичекой памяти
 };

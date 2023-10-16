@@ -74,7 +74,7 @@ void File::LineInfo(int index) {
 char *File::FileGetRhyme(char *line) {
   // char *end_line = line;
 
-  int random_line_index = rand() / this->file_lines_;
+  int random_line_index = rand() % this->file_lines_;
 
   IsRhyme(line, this->file_lines_pointers_[random_line_index]);
 

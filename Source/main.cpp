@@ -18,10 +18,8 @@ int main() {
   std::cout << file.GetLine(file.GetNumberLine() - 2) << '\n';
   std::cout << file.GetLine(file.GetNumberLine() - 1) << '\n';
 
-  std::cout << '\n' << '\n';
-
-  file.LineInfo(0);
-  file.LineInfo(1);
+  // std::cout << '\n' << '\n';
+  file.FileGetRhyme(file.file_lines_pointers_[3]);
 
   return 0;
 }

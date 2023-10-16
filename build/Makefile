@@ -153,30 +153,6 @@ Source/File.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/Source/File.cpp.s
 .PHONY : Source/File.cpp.s
 
-Source/Rhyme.o: Source/Rhyme.cpp.o
-.PHONY : Source/Rhyme.o
-
-# target to build an object file
-Source/Rhyme.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/Source/Rhyme.cpp.o
-.PHONY : Source/Rhyme.cpp.o
-
-Source/Rhyme.i: Source/Rhyme.cpp.i
-.PHONY : Source/Rhyme.i
-
-# target to preprocess a source file
-Source/Rhyme.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/Source/Rhyme.cpp.i
-.PHONY : Source/Rhyme.cpp.i
-
-Source/Rhyme.s: Source/Rhyme.cpp.s
-.PHONY : Source/Rhyme.s
-
-# target to generate assembly for a file
-Source/Rhyme.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/Source/Rhyme.cpp.s
-.PHONY : Source/Rhyme.cpp.s
-
 Source/main.o: Source/main.cpp.o
 .PHONY : Source/main.o
 
@@ -213,9 +189,6 @@ help:
 	@echo "... Source/File.o"
 	@echo "... Source/File.i"
 	@echo "... Source/File.s"
-	@echo "... Source/Rhyme.o"
-	@echo "... Source/Rhyme.i"
-	@echo "... Source/Rhyme.s"
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"

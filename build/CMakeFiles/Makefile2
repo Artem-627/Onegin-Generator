@@ -81,12 +81,12 @@ clean: CMakeFiles/Rhymes.dir/clean
 CMakeFiles/Rhymes.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rhymes.dir/build.make CMakeFiles/Rhymes.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles --progress-num=1,2,3,4 "Built target Rhymes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles --progress-num=1,2,3 "Built target Rhymes"
 .PHONY : CMakeFiles/Rhymes.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Rhymes.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Rhymes.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles 0
 .PHONY : CMakeFiles/Rhymes.dir/rule
