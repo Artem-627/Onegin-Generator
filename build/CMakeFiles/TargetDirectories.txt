@@ -1,0 +1,3 @@
+/home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles/Rhymes.dir
+/home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles/edit_cache.dir
+/home/artem627/Documents/olymp/phtl/pracs/rhymes/build/CMakeFiles/rebuild_cache.dir
