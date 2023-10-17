@@ -1,9 +1,13 @@
 #include "./File.h"
 #include "./Rhyme.h"
+#include <cstdlib>
 #include <iostream>
+#include <random>
 #include <vector>
 
 File::File(std::string file_name) {
+  srand(time(NULL));
+
   // Открывем файл
   fin_ = std::ifstream(file_name);
 
@@ -72,11 +76,88 @@ void File::LineInfo(int index) {
 }
 
 char *File::FileGetRhyme(char *line) {
-  // char *end_line = line;
+  char *random_line;
+  bool has_line = 0;
+  int random_line_index;
 
-  int random_line_index = rand() % this->file_lines_;
+  while (!has_line) {
+    random_line_index = rand() % this->file_lines_;
+    random_line = this->file_lines_pointers_[random_line_index];
+    if (IsRhyme(line, this->file_lines_pointers_[random_line_index]) &&
+        !(line == this->file_lines_pointers_[random_line_index])) {
+      has_line = 1;
+      break;
+    }
+    if (random_line_index >= this->file_lines_ - 1) {
+      return nullptr;
+    }
+  }
 
-  IsRhyme(line, this->file_lines_pointers_[random_line_index]);
+  return this->file_lines_pointers_[random_line_index];
+}
 
-  return line;
+void File::PrintPoem() {
+  std::random_device rd;
+  std::uniform_int_distribution<int> dist(0, this->file_lines_ - 1);
+  int first_lines[7];
+  char *rhymed_lines[7];
+
+  for (int i = 0; i < 7; ++i) {
+    first_lines[i] = dist(rd);
+  }
+
+  for (int i = 0; i < 7; ++i) {
+    char *buffer =
+        this->FileGetRhyme(this->file_lines_pointers_[first_lines[i]]);
+
+    while (buffer == nullptr) {
+      first_lines[i] = dist(rd);
+      buffer = this->FileGetRhyme(this->file_lines_pointers_[first_lines[i]]);
+    }
+
+    rhymed_lines[i] = buffer;
+  }
+
+  // std::cout << this->file_lines_pointers_[first_lines[0]] << '\n';
+  // std::cout << this->file_lines_pointers_[first_lines[1]] << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[0]])
+  //           << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[1]])
+  //           << '\n';
+  //
+  // std::cout << this->file_lines_pointers_[first_lines[2]] << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[2]])
+  //           << '\n';
+  // std::cout << this->file_lines_pointers_[first_lines[3]] << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[3]])
+  //           << '\n';
+  //
+  // std::cout << this->file_lines_pointers_[first_lines[4]] << '\n';
+  // std::cout << this->file_lines_pointers_[first_lines[5]] << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[5]])
+  //           << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[4]])
+  //           << '\n';
+  //
+  // std::cout << this->file_lines_pointers_[first_lines[6]] << '\n';
+  // std::cout << this->FileGetRhyme(this->file_lines_pointers_[first_lines[6]])
+  //           << '\n';
+
+  std::cout << this->file_lines_pointers_[first_lines[0]] << '\n';
+  std::cout << this->file_lines_pointers_[first_lines[1]] << '\n';
+  std::cout << rhymed_lines[0] << '\n';
+  std::cout << rhymed_lines[1] << '\n';
+
+  std::cout << this->file_lines_pointers_[first_lines[2]] << '\n';
+  std::cout << rhymed_lines[2] << '\n';
+  std::cout << this->file_lines_pointers_[first_lines[3]] << '\n';
+  std::cout << rhymed_lines[3] << '\n';
+
+  std::cout << this->file_lines_pointers_[first_lines[4]] << '\n';
+  std::cout << this->file_lines_pointers_[first_lines[5]] << '\n';
+  std::cout << rhymed_lines[5] << '\n';
+  std::cout << rhymed_lines[4] << '\n';
+
+  std::cout << this->file_lines_pointers_[first_lines[6]] << '\n';
+  std::cout << rhymed_lines[6] << '\n';
 }

@@ -16,6 +16,7 @@ public:
   void LineInfo(int index);
 
   char *FileGetRhyme(char *line);
+  void PrintPoem();
 
 private:
   std::ifstream fin_; // Поток с файлом
